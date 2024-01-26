@@ -1,6 +1,6 @@
 ## Description
 
-Tiny [NestJS](https://nestjs.com/) service with the following features:
+A tiny [NestJS](https://nestjs.com/) service with the following features:
 
 - [Prisma](https://www.prisma.io/) typesafe ORM.
 - [MongoDB](https://www.mongodb.com/) document database.
@@ -13,7 +13,7 @@ Tiny [NestJS](https://nestjs.com/) service with the following features:
 
 ## Docs
 
-Once service is up and running, [Swagger](http://localhost:3000/docs) API documentation is available.
+Once service is up and running, Swagger API documentation is available [here](http://localhost:3000/docs).
 
 ## Install
 
