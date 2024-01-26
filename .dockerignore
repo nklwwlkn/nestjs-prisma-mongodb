@@ -1,0 +1,47 @@
+# Ignore version control system files
+.git
+.gitignore
+
+# Node.js specific
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Build artifacts
+dist
+build
+.out
+
+# Prisma ORM specific files
+prisma/migrations
+
+# Environment and config files
+*.env
+*.env.local
+*.env.development
+*.env.test
+*.env.production
+
+# IDE specific files and directories
+.vscode
+.idea
+*.swp
+*.swo
+
+# Ignore Docker related files
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Various log files
+logs
+*.log
+
+# Test and documentation files
+tests
+*.md
+docs
+
+# Temporary files
+tmp
+temp
