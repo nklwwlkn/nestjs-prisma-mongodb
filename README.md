@@ -6,10 +6,10 @@
 $ npm install
 ```
 
-## Environment
+## Set up environment
 
 1. Create a new `.env` file.
-2. Copy `.env-example` content into `.env`
+2. Copy `.env-example` content into `.env`.
 
 ## Running the app
 
