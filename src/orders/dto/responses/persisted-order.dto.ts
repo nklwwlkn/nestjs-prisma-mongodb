@@ -2,7 +2,7 @@ import { Order, Package, Location, OrderStatus } from '@prisma/client';
 import { ApiProperty } from '@nestjs/swagger';
 import { Expose, Type } from 'class-transformer';
 
-class LocationEntity implements Location {
+class PersistedLocationDto implements Location {
   @ApiProperty({
     example: '742 Evergreen Terrace',
   })
@@ -45,12 +45,12 @@ class LocationEntity implements Location {
   @Expose()
   phonenumber: string;
 
-  constructor(location: LocationEntity) {
+  constructor(location: PersistedLocationDto) {
     Object.assign(this, location);
   }
 }
 
-class PackageEntity implements Package {
+class PersistedPackageDto implements Package {
   @ApiProperty({
     example: 50,
   })
@@ -75,12 +75,12 @@ class PackageEntity implements Package {
   @Expose()
   weight: number;
 
-  constructor(pack: PackageEntity) {
+  constructor(pack: PersistedPackageDto) {
     Object.assign(this, pack);
   }
 }
 
-export class OrderEntity implements Order {
+export class PersistedOrderDto implements Order {
   @ApiProperty({
     example: '65b2549ef79e89aeb7cde58d',
   })
@@ -101,20 +101,20 @@ export class OrderEntity implements Order {
   @Expose()
   status: OrderStatus;
 
-  @ApiProperty({ type: LocationEntity })
+  @ApiProperty({ type: PersistedLocationDto })
   @Expose()
-  @Type(() => LocationEntity)
-  dropoff: LocationEntity;
+  @Type(() => PersistedLocationDto)
+  dropoff: PersistedLocationDto;
 
-  @ApiProperty({ type: LocationEntity })
+  @ApiProperty({ type: PersistedLocationDto })
   @Expose()
-  @Type(() => LocationEntity)
-  pickup: LocationEntity;
+  @Type(() => PersistedLocationDto)
+  pickup: PersistedLocationDto;
 
-  @ApiProperty({ type: [PackageEntity] })
+  @ApiProperty({ type: [PersistedPackageDto] })
   @Expose()
-  @Type(() => PackageEntity)
-  packages: PackageEntity[];
+  @Type(() => PersistedPackageDto)
+  packages: PersistedPackageDto[];
 
   @ApiProperty({
     example: 7,
@@ -130,7 +130,7 @@ export class OrderEntity implements Order {
   @Expose()
   updatedAt: Date;
 
-  constructor(order: OrderEntity) {
+  constructor(order: PersistedOrderDto) {
     Object.assign(this, order);
   }
 }

@@ -16,11 +16,13 @@ import { IdParamDto } from '../dto';
 import { ApiRoute } from '../decorators';
 import { OrdersService } from './orders.service';
 import {
-  OrderEntity,
-  UpdateOrderStatusEntity,
-  SearchOrdersEntity,
-} from './entities';
-import { CreateOrderDto, SearchQueryDto, UpdateOrderStatusDto } from './dto';
+  CreateOrderDto,
+  CreatedOrderDto,
+  SearchQueryDto,
+  FoundOrdersDto,
+  UpdateOrderStatusDto,
+  UpdatedOrderStatusDto,
+} from './dto';
 
 const ORDERS_RESOURCE = 'orders';
 
@@ -38,13 +40,16 @@ export class OrdersController {
   @ApiRoute({
     description: 'Create an order',
     summary: 'Creates a new order',
-    created: { type: OrderEntity },
+    created: {
+      description: 'Returns partial order document',
+      type: CreatedOrderDto,
+    },
     badRequest: { description: 'Invalid request body' },
   })
   async create(@Body() createOrderDto: CreateOrderDto) {
     const payload = await this.ordersService.create(createOrderDto);
 
-    return plainToInstance(OrderEntity, payload);
+    return plainToInstance(CreatedOrderDto, payload);
   }
 
   @Patch(':id/status')
@@ -63,7 +68,7 @@ export class OrdersController {
     - ${OrderStatus.CANCELLED}, ${OrderStatus.DELIVERED}, ${OrderStatus.RETURNED} -> none.`,
     summary: 'Updates status of an order',
     notFound: { description: 'Order to update not found' },
-    ok: { description: 'Order status updated', type: UpdateOrderStatusEntity },
+    ok: { description: 'Order status updated', type: UpdatedOrderStatusDto },
   })
   async updateStatus(
     @Param() param: IdParamDto,
@@ -74,7 +79,7 @@ export class OrdersController {
       updateOrderStatusDto,
     );
 
-    return plainToInstance(UpdateOrderStatusEntity, payload);
+    return plainToInstance(UpdatedOrderStatusDto, payload);
   }
 
   @Get('search')
@@ -82,7 +87,7 @@ export class OrdersController {
     description:
       'Search dropoff orders by partial address and full zipcode matches',
     summary: 'Searches dropoff orders',
-    ok: { description: 'Orders found', type: [SearchOrdersEntity] },
+    ok: { description: 'Orders` id found', type: [FoundOrdersDto] },
     badRequest: { description: 'Invalid request query' },
   })
   @ApiQuery({ name: 'address', required: true })
@@ -93,6 +98,6 @@ export class OrdersController {
       query.zipcode,
     );
 
-    return plainToInstance(SearchOrdersEntity, rawData);
+    return plainToInstance(FoundOrdersDto, rawData);
   }
 }

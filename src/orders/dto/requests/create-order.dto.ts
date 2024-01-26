@@ -2,7 +2,6 @@ import { ApiProperty } from '@nestjs/swagger';
 import { Transform, Type } from 'class-transformer';
 import {
   IsNotEmpty,
-  MinLength,
   IsPhoneNumber,
   IsString,
   IsEmail,
@@ -11,6 +10,7 @@ import {
   ArrayMinSize,
   ArrayNotEmpty,
   Min,
+  Length,
 } from 'class-validator';
 
 export class CreateLocationDto {
@@ -55,7 +55,7 @@ export class CreateLocationDto {
   })
   @IsNotEmpty()
   @IsString()
-  @MinLength(6)
+  @Length(6, 6)
   zipcode: string;
 
   @ApiProperty({
