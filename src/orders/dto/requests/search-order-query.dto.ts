@@ -2,7 +2,7 @@ import { PickType } from '@nestjs/swagger';
 
 import { CreateLocationDto } from '..';
 
-export class SearchQueryDto extends PickType(CreateLocationDto, [
+export class SearchOrderQueryDto extends PickType(CreateLocationDto, [
   'address',
   'zipcode',
 ] as const) {}

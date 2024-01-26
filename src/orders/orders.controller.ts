@@ -18,7 +18,7 @@ import { OrdersService } from './orders.service';
 import {
   CreateOrderDto,
   CreatedOrderDto,
-  SearchQueryDto,
+  SearchOrderQueryDto,
   FoundOrdersDto,
   UpdateOrderStatusDto,
   UpdatedOrderStatusDto,
@@ -87,12 +87,12 @@ export class OrdersController {
     description:
       'Search dropoff orders by partial address and full zipcode matches',
     summary: 'Searches dropoff orders',
-    ok: { description: 'Orders` id found', type: [FoundOrdersDto] },
+    ok: { description: 'Orders` ids found', type: [FoundOrdersDto] },
     badRequest: { description: 'Invalid request query' },
   })
   @ApiQuery({ name: 'address', required: true })
   @ApiQuery({ name: 'zipcode', required: true })
-  async searchByAddressAndZipcode(@Query() query: SearchQueryDto) {
+  async searchByAddressAndZipcode(@Query() query: SearchOrderQueryDto) {
     const rawData = await this.ordersService.searchByAddressAndZipcode(
       query.address,
       query.zipcode,

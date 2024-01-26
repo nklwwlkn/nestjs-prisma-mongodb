@@ -8,6 +8,7 @@ Tiny [NestJS](https://nestjs.com/) service with the following features:
 - [Docker Compose](https://docs.docker.com/compose/) to run replica set instance of MongoDB.
 - Basic [Continius Integration](./.github/workflows/ci.yml).
 - [Eslint](https://eslint.org/)/[Prettier](https://prettier.io/) setup.
+- Pre-configured [GitHub Dependabot](https://docs.github.com/en/code-security/dependabot) for automated dependency updates.
 - Unit tests.
 
 ## Docs
@@ -22,7 +23,7 @@ $ npm install
 
 ## Configure
 
-1. Rename`.env-example` to `.env`.
+1. Rename `.env-example` to `.env`.
 
 ## Run
 

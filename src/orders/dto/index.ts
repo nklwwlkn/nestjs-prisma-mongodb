@@ -1,7 +1,7 @@
 // Requests:
 export * from './requests/create-order.dto';
 export * from './requests/update-order-status.dto';
-export * from './requests/search-query.dto';
+export * from './requests/search-order-query.dto';
 
 // Responses:
 export * from './responses/persisted-order.dto';
