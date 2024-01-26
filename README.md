@@ -5,8 +5,8 @@ Tiny [NestJS](https://nestjs.com/) service with the following features:
 - [Prisma](https://www.prisma.io/) typesafe ORM.
 - [MongoDB](https://www.mongodb.com/) document database.
 - [Swagger](https://swagger.io/) API documentation.
-- Pre-configured [Docker Compose](https://docs.docker.com/compose/) to run replica set instance of MongoDB.
-- Pre-configured basic [Continius Integration](./guthub/workflows/ci.yml).
+- [Docker Compose](https://docs.docker.com/compose/) to run replica set instance of MongoDB.
+- Basic [Continius Integration](./.github/workflows/ci.yml).
 - [Eslint](https://eslint.org/)/[Prettier](https://prettier.io/) setup.
 - Unit tests.
 
@@ -22,8 +22,7 @@ $ npm install
 
 ## Configure
 
-1. Create a new `.env` file.
-2. Copy `.env-example` content into `.env`.
+1. Rename`.env-example` to `.env`.
 
 ## Run
 
