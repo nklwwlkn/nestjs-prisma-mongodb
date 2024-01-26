@@ -27,7 +27,7 @@ describe('OrdersService', () => {
     });
 
     describe('calculatePrice', () => {
-      describe('calculatebale', () => {
+      describe('calculable', () => {
         const testCases = [
           {
             packages: [
