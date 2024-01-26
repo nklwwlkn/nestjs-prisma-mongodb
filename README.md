@@ -6,7 +6,7 @@ A tiny [NestJS](https://nestjs.com/) service with the following features:
 - [MongoDB](https://www.mongodb.com/) document database.
 - [Swagger](https://swagger.io/) API documentation.
 - [Docker Compose](https://docs.docker.com/compose/) to run replica set instance of MongoDB.
-- Basic [Continius Integration](./.github/workflows/ci.yml).
+- Basic [Continuous Integration](./.github/workflows/ci.yml).
 - [Eslint](https://eslint.org/)/[Prettier](https://prettier.io/) setup.
 - Pre-configured [GitHub Dependabot](https://docs.github.com/en/code-security/dependabot) for automated dependency updates.
 - Uses fast Rust-based [SWC](https://swc.rs/) compiler.
