@@ -2,9 +2,12 @@
   "name": "core-srv",
   "version": "0.0.1",
   "description": "",
-  "author": "",
+  "author": "nklwwlkn",
   "private": true,
   "license": "UNLICENSED",
+  "engines": {
+    "node": "20.11.0"
+  },
   "scripts": {
     "build": "nest build",
     "compose:up": "docker compose up -d",
