@@ -48,6 +48,7 @@ export const ApiRoute = ({
   if (ok) {
     decorators.push(ApiOkResponse(ok));
   }
+
   if (created) {
     decorators.push(ApiCreatedResponse(created));
   }
