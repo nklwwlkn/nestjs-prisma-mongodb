@@ -9,6 +9,7 @@ A tiny [NestJS](https://nestjs.com/) service with the following features:
 - Basic [Continius Integration](./.github/workflows/ci.yml).
 - [Eslint](https://eslint.org/)/[Prettier](https://prettier.io/) setup.
 - Pre-configured [GitHub Dependabot](https://docs.github.com/en/code-security/dependabot) for automated dependency updates.
+- Uses fast Rust-based [SWC](https://swc.rs/) compiler.
 - Unit tests.
 
 ## Docs
