@@ -54,13 +54,26 @@ $ npm run start:prod
 
 ## Test
 
+### Watch
+
 ```bash
-# unit tests
+$ npm run test:watch
+```
+
+### Unit
+
+```bash
 $ npm run test
+```
 
-# e2e tests
+### E2E
+
+```bash
 $ npm run test:e2e
+```
 
-# test coverage
+### Coverage
+
+```bash
 $ npm run test:cov
 ```
