@@ -28,14 +28,27 @@ $ npm install
 
 ## Run
 
+### Development
+
 ```bash
-# development
-$ npm run start # Note: it also spins up a MongoDB replica set for you.
+$ npm run start
+```
 
-# watch mode
-$ npm run start:dev # Note: it also spins up a MongoDB replica set for you.
+> [!NOTE]
+> It also spins up a MongoDB replica set for you using Docker Compose.
 
-# production mode
+### Watch
+
+```bash
+$ npm run start:dev
+```
+
+> [!NOTE]
+> It also spins up a MongoDB replica set for you using Docker Compose.
+
+### Production
+
+```bash
 $ npm run start:prod
 ```
 
