@@ -69,6 +69,9 @@ export class OrdersController {
     summary: 'Updates status of an order',
     notFound: { description: 'Order to update not found' },
     ok: { description: 'Order status updated', type: UpdatedOrderStatusDto },
+    badRequest: {
+      description: 'This kind of order status transition is not allowed',
+    },
   })
   async updateStatus(
     @Param() param: IdParamDto,
