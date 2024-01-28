@@ -2,7 +2,7 @@ import { ApiProperty, PickType } from '@nestjs/swagger';
 import { OrderStatus } from '@prisma/client';
 import { Expose } from 'class-transformer';
 
-import { PersistedOrderDto } from './persisted-order.dto';
+import { PersistedOrderDto } from '@orders/dtos';
 
 export class UpdatedOrderStatusDto extends PickType(PersistedOrderDto, [
   'id',
@@ -20,5 +20,5 @@ export class UpdatedOrderStatusDto extends PickType(PersistedOrderDto, [
     example: OrderStatus.CREATED,
   })
   @Expose()
-  oldStatus: OrderStatus;
+  oldStatus!: OrderStatus;
 }

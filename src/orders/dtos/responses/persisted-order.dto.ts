@@ -7,43 +7,43 @@ class PersistedLocationDto implements Location {
     example: '742 Evergreen Terrace',
   })
   @Expose()
-  address: string;
+  address!: string;
 
   @ApiProperty({
     example: 'Springfield',
   })
   @Expose()
-  city: string;
+  city!: string;
 
   @ApiProperty({
     example: 'USA',
   })
   @Expose()
-  country: string;
+  country!: string;
 
   @ApiProperty({
     example: 'example@gmail.com',
   })
   @Expose()
-  email: string;
+  email!: string;
 
   @ApiProperty({
     example: 'Bart Simpson',
   })
   @Expose()
-  name: string;
+  name!: string;
 
   @ApiProperty({
     example: '1234 AB',
   })
   @Expose()
-  zipcode: string;
+  zipcode!: string;
 
   @ApiProperty({
     example: '+31631631631',
   })
   @Expose()
-  phonenumber: string;
+  phonenumber!: string;
 
   constructor(location: PersistedLocationDto) {
     Object.assign(this, location);
@@ -55,25 +55,25 @@ class PersistedPackageDto implements Package {
     example: 50,
   })
   @Expose()
-  height: number;
+  height!: number;
 
   @ApiProperty({
     example: 20,
   })
   @Expose()
-  length: number;
+  length!: number;
 
   @ApiProperty({
     example: 10,
   })
   @Expose()
-  width: number;
+  width!: number;
 
   @ApiProperty({
     example: 50,
   })
   @Expose()
-  weight: number;
+  weight!: number;
 
   constructor(pack: PersistedPackageDto) {
     Object.assign(this, pack);
@@ -85,7 +85,7 @@ export class PersistedOrderDto implements Order {
     example: '65b2549ef79e89aeb7cde58d',
   })
   @Expose()
-  id: string;
+  id!: string;
 
   @ApiProperty({
     examples: [
@@ -99,36 +99,36 @@ export class PersistedOrderDto implements Order {
     example: OrderStatus.CREATED,
   })
   @Expose()
-  status: OrderStatus;
+  status!: OrderStatus;
 
   @ApiProperty({ type: PersistedLocationDto })
   @Expose()
   @Type(() => PersistedLocationDto)
-  dropoff: PersistedLocationDto;
+  dropoff!: PersistedLocationDto;
 
   @ApiProperty({ type: PersistedLocationDto })
   @Expose()
   @Type(() => PersistedLocationDto)
-  pickup: PersistedLocationDto;
+  pickup!: PersistedLocationDto;
 
   @ApiProperty({ type: [PersistedPackageDto] })
   @Expose()
   @Type(() => PersistedPackageDto)
-  packages: PersistedPackageDto[];
+  packages!: PersistedPackageDto[];
 
   @ApiProperty({
     example: 7,
   })
   @Expose()
-  price: number;
+  price!: number;
 
   @ApiProperty()
   @Expose()
-  createdAt: Date;
+  createdAt!: Date;
 
   @ApiProperty()
   @Expose()
-  updatedAt: Date;
+  updatedAt!: Date;
 
   constructor(order: PersistedOrderDto) {
     Object.assign(this, order);

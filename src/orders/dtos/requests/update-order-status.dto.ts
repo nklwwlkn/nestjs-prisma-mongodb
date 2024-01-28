@@ -16,5 +16,5 @@ export class UpdateOrderStatusDto {
   })
   @IsNotEmpty()
   @IsEnum(OrderStatus)
-  status: OrderStatus;
+  status!: OrderStatus;
 }

@@ -5,7 +5,7 @@ import { PrismaClientExceptionFilter } from 'nestjs-prisma';
 import * as compression from 'compression';
 import helmet from 'helmet';
 
-import { AppModule } from './app.module';
+import { AppModule } from '@/app.module';
 
 const swaggerCfg = new DocumentBuilder()
   .setTitle('core-srv API')
@@ -21,7 +21,7 @@ async function bootstrap() {
   });
 
   app.use(helmet());
-  app.use(compression());
+  app.use(compression.default());
 
   const { httpAdapter } = app.get(HttpAdapterHost);
 
@@ -38,4 +38,5 @@ async function bootstrap() {
 
   await app.listen(process.env.PORT ?? 3000);
 }
+
 bootstrap();

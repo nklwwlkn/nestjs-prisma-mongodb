@@ -9,7 +9,7 @@ import {
   ApiResponseOptions,
 } from '@nestjs/swagger';
 
-import { ApiResponseDto, BadRequestDto } from '../dto';
+import { ApiResponseDto, BadRequestDto } from '@dtos/index';
 
 interface DefaultResponsesInput {
   summary: string;

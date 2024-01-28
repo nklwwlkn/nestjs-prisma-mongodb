@@ -1,6 +1,6 @@
 import { PickType } from '@nestjs/swagger';
 
-import { PersistedOrderDto } from './persisted-order.dto';
+import { PersistedOrderDto } from '@orders/dtos';
 
 export class CreatedOrderDto extends PickType(PersistedOrderDto, [
   'id',

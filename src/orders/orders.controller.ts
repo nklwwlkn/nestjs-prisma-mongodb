@@ -12,9 +12,9 @@ import { OrderStatus } from '@prisma/client';
 import { ApiBody, ApiQuery, ApiTags } from '@nestjs/swagger';
 import { plainToInstance } from 'class-transformer';
 
-import { IdParamDto } from '../dto';
-import { ApiRoute } from '../decorators';
-import { OrdersService } from './orders.service';
+import { IdParamDto } from '@dtos/index';
+import { ApiRoute } from '@decorators/index';
+import { OrdersService } from '@orders/orders.service';
 import {
   CreateOrderDto,
   CreatedOrderDto,
@@ -22,7 +22,7 @@ import {
   FoundOrdersDto,
   UpdateOrderStatusDto,
   UpdatedOrderStatusDto,
-} from './dto';
+} from '@orders/dtos';
 
 const ORDERS_RESOURCE = 'orders';
 
