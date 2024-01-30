@@ -168,7 +168,7 @@ export class OrdersService {
         pack.length <= 0 ||
         pack.weight <= 0
       ) {
-        throw Error('Package properties must be greater than 0.');
+        throw new Error('Package properties must be greater than 0.');
       }
 
       let packageCost = pricePerPackage;
