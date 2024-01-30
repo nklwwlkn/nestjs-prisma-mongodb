@@ -2,8 +2,8 @@ import { ApiProperty } from '@nestjs/swagger';
 
 export class ApiResponseDto {
   @ApiProperty()
-  statusCode: number;
+  statusCode!: number;
 
   @ApiProperty()
-  message: string;
+  message!: string;
 }

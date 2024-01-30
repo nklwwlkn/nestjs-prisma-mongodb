@@ -1,6 +1,7 @@
 import { plainToClass } from 'class-transformer';
 import {
   IsBoolean,
+  IsNotEmpty,
   IsOptional,
   IsPort,
   IsString,
@@ -14,13 +15,16 @@ export class EnvVariables {
     allow_underscores: true,
     require_tld: false,
   })
-  DATABASE_URL: string;
+  @IsNotEmpty()
+  DATABASE_URL!: string;
 
   @IsString()
-  NODE_ENV: string;
+  @IsNotEmpty()
+  NODE_ENV!: string;
 
   @IsPort()
-  PORT: string;
+  @IsNotEmpty()
+  PORT!: string;
 
   @IsBoolean()
   @IsOptional()
@@ -28,9 +32,7 @@ export class EnvVariables {
 }
 
 export function validateEnvs(config: Record<string, unknown>): EnvVariables {
-  const validatedConfig = plainToClass(EnvVariables, config, {
-    enableImplicitConversion: true,
-  });
+  const validatedConfig = plainToClass(EnvVariables, config);
 
   const errors = validateSync(validatedConfig, {
     skipMissingProperties: false,

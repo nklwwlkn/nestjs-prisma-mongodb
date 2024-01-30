@@ -19,35 +19,35 @@ export class CreateLocationDto {
   })
   @IsNotEmpty()
   @IsString()
-  address: string;
+  address!: string;
 
   @ApiProperty({
     example: 'Springfield',
   })
   @IsNotEmpty()
   @IsString()
-  city: string;
+  city!: string;
 
   @ApiProperty({
     example: 'USA',
   })
   @IsNotEmpty()
   @IsString()
-  country: string;
+  country!: string;
 
   @ApiProperty({
     example: 'example@gmail.com',
   })
   @IsNotEmpty()
   @IsEmail()
-  email: string;
+  email!: string;
 
   @ApiProperty({
     example: 'Bart Simpson',
   })
   @IsNotEmpty()
   @IsString()
-  name: string;
+  name!: string;
 
   @Transform(({ value }) => value?.replace(/\s/g, ''))
   @ApiProperty({
@@ -56,7 +56,7 @@ export class CreateLocationDto {
   @IsNotEmpty()
   @IsString()
   @Length(6, 6)
-  zipcode: string;
+  zipcode!: string;
 
   @ApiProperty({
     example: '+31631631631',
@@ -64,7 +64,7 @@ export class CreateLocationDto {
   @IsNotEmpty()
   @IsString()
   @IsPhoneNumber()
-  phonenumber: string;
+  phonenumber!: string;
 }
 
 export class CreatePackageDto {
@@ -74,7 +74,7 @@ export class CreatePackageDto {
   @IsNotEmpty()
   @IsNumber()
   @Min(0.001)
-  height: number;
+  height!: number;
 
   @ApiProperty({
     example: 20,
@@ -82,7 +82,7 @@ export class CreatePackageDto {
   @IsNotEmpty()
   @IsNumber()
   @Min(0.001)
-  length: number;
+  length!: number;
 
   @ApiProperty({
     example: 10,
@@ -90,7 +90,7 @@ export class CreatePackageDto {
   @IsNotEmpty()
   @IsNumber()
   @Min(0.001)
-  width: number;
+  width!: number;
 
   @ApiProperty({
     example: 50,
@@ -98,7 +98,7 @@ export class CreatePackageDto {
   @IsNotEmpty()
   @IsNumber()
   @Min(0.001)
-  weight: number;
+  weight!: number;
 }
 
 export class CreateOrderDto {
@@ -106,18 +106,18 @@ export class CreateOrderDto {
   @IsNotEmpty()
   @ValidateNested()
   @Type(() => CreateLocationDto)
-  pickup: CreateLocationDto;
+  pickup!: CreateLocationDto;
 
   @ApiProperty({ type: CreateLocationDto })
   @IsNotEmpty()
   @ValidateNested()
   @Type(() => CreateLocationDto)
-  dropoff: CreateLocationDto;
+  dropoff!: CreateLocationDto;
 
   @ApiProperty({ type: CreatePackageDto, isArray: true })
   @ArrayNotEmpty()
   @ArrayMinSize(1)
   @ValidateNested({ each: true })
   @Type(() => CreatePackageDto)
-  packages: CreatePackageDto[];
+  packages!: CreatePackageDto[];
 }

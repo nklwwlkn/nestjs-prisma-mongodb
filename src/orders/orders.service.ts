@@ -7,13 +7,17 @@ import { OrderStatus } from '@prisma/client';
 import { PrismaService } from 'nestjs-prisma';
 import * as _ from 'lodash';
 
-import { CreateOrderDto, CreatePackageDto, UpdateOrderStatusDto } from './dto';
+import {
+  CreateOrderDto,
+  CreatePackageDto,
+  UpdateOrderStatusDto,
+} from '@orders/dtos';
 
 type CalculatePriceOptions = {
-  pricePerPackage?: number;
-  pricePerKg?: number;
-  pricePerExtraVolume?: number;
-  volumeThreshold?: number;
+  pricePerPackage: number;
+  pricePerKg: number;
+  pricePerExtraVolume: number;
+  volumeThreshold: number;
 };
 
 @Injectable()

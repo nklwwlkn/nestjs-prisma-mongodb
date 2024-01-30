@@ -2,7 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { OrderStatus } from '@prisma/client';
 import { PrismaService } from 'nestjs-prisma';
 
-import { OrdersService } from './orders.service';
+import { OrdersService } from '@orders/orders.service';
 
 describe('OrdersService', () => {
   let service: OrdersService;

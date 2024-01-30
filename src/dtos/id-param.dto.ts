@@ -8,5 +8,5 @@ export class IdParamDto {
   })
   @IsNotEmpty()
   @IsMongoId()
-  id: string;
+  id!: string;
 }
